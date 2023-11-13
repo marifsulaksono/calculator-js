@@ -42,11 +42,35 @@ function CalculatorPage() {
         }
     }
 
-    const btn = document.createElement("button");
-    btn.id = "sum";
-    btn.textContent = "Tambah";
-    btn.onclick = function () {
+    const btnPlus = document.createElement("button");
+    btnPlus.id = "plus";
+    btnPlus.textContent = "+";
+    btnPlus.onclick = function () {
         result = state.inputNumber1 + state.inputNumber2;
+        document.getElementById("result").innerHTML = result;
+    }
+
+    const btnMinus = document.createElement("button");
+    btnMinus.id = "minus";
+    btnMinus.textContent = "-";
+    btnMinus.onclick = function () {
+        result = state.inputNumber1 - state.inputNumber2;
+        document.getElementById("result").innerHTML = result;
+    }
+
+    const btnMultiple = document.createElement("button");
+    btnMultiple.id = "multiple";
+    btnMultiple.textContent = "X";
+    btnMultiple.onclick = function () {
+        result = state.inputNumber1 * state.inputNumber2;
+        document.getElementById("result").innerHTML = result;
+    }
+
+    const btnDivide = document.createElement("button");
+    btnDivide.id = "divide";
+    btnDivide.textContent = "/";
+    btnDivide.onclick = function () {
+        result = state.inputNumber1 / state.inputNumber2;
         document.getElementById("result").innerHTML = result;
     }
 
@@ -57,7 +81,10 @@ function CalculatorPage() {
     div.id = "number";
     div.append(numb1);
     div.append(numb2);
-    div.append(btn);
+    div.append(btnPlus);
+    div.append(btnMinus);
+    div.append(btnMultiple);
+    div.append(btnDivide);
     div.append(textResult);
 
     return div;
